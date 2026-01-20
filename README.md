@@ -1,20 +1,22 @@
 # SERTİFİKALARIM
 
- ![Model Çıktısı](images/sertifika1.jpg)
+ ![Model Çıktısı](sertifika1.jpg)
 
 
- ![Model Çıktısı](images/sertifika22.jpg)
-
-
-
+ ![Model Çıktısı](sertifika22.jpg)
 
 
 
-## KARAR VEREN MAKİNE ÖĞRENMESİ
+
+
+
+## Akıllı Kontenyer Tahmini
 
 ### PROJE AMACI
   **girilen değerlere göre karar verip kullanıcıların işini kolaylaştırmak**
+  
   **seçilen 3 sınıflandırma algoritmasını gözle görülür şekilde karşılaştırmak**
+  
   **aynı sitemi thinkter ile kullanıcya sunarak görsel olarak işi güçlendirmek ve  karşılaştırılmalı analiz işini kolaylaştırmak**
 
 
