@@ -66,7 +66,7 @@ Yukarıda da bahsettiğim gibi kategorik verilerimi sayısallaştırrıken iki f
 
 Buradaki kod satırlarında ise modelimin bakmasını istemediğim değerleri yoksaydım özellikle class ve target sınfıını buraya ekledim çünkü zaten class sınıfımın yeni adı yukarıda görebileceğiniz üzere yeni data frame ile target olmuştu o yüzden onu yok saydırmyı tercih ettim devamnda da target değişkenimi özellikle yok saymam gerekirdi çünkü eğer model sonucu görürse zaten baştan hata yapmış olurdum devamında da modelin bakıp kopya çekebileceği ileriye yönelik değerleri de buna ekledim.
 
-![Model Çıktısı](images/preprocessing5.jpg)
+![Model Çıktısı](images/preprocessingr5.jpg)
 
 Preprocessing adımlarımdan belki de olmazsa olmaz adımlarımdan biri olduğunu düşündüğüm yukarıdaki kod satırlarında ise modelimin tahmin yaparak ezberden kaçınıp gerçekten veriler üzerinden dorğu tahmin yapabilmesi için tasarladım %80 eğitim %20 test olarak belirlediğim ölçülerde modeli eğittim
 
@@ -98,7 +98,7 @@ Bu adımlarda ise yorum satırlarında bahsettiğim gibi kullancııdan girdi al
 Bu kod satırlarında ise kullanıcıdan veri almadan önce bahsettiğim gibi onehot encoding uygulamıştım bazı sütunların üzerinde yine aynı duruma ithafen bu sefer de kullanıcıdan aldığım değere onehotencoder uyguladım daha doğrusu seçilen değerimi onehotencoder ile temsil edilebilmesini sağladım.
 Öncelikle dorğu bir seçim yapıldığını kontrol ettikten sonra onehotencoderda ilgili sütuna 1 değerini yolladım böylece model bunun hangi seçim olduğunu bilecek ve tahmin yapabilecek.
 
-![Model Çıktısı](images/preprocessin10.jpg)
+![Model Çıktısı](images/preprocessing10.jpg)
 
 Bu adımda ise yine daha önce yaptığım gibi gelen sayısal değeri scale ettim ki kategorik verilerden oluşan sayısal değerleri ezmesin diye.
 
@@ -132,10 +132,13 @@ Böylece hem kullanıcı hem de tasarımcı bu çıktıları görebilecek ve mod
 
 Kullandığım performans metrikleri ve açıklamaları devamında da çıktı ekranında nasıl gösterilidiği:
 
-*ACCURACY SCORE* doğru tahmin sayısı / toplam tahmin sayısı olarak hesaplanan bir değerdir.
-*PRECISION* model sınıf tahmin değerlerinde ne kadar başarılı.
-*RECALL*  model doğru sınıflardan kaçını bilebildi.
-*F1 SCORE*  üstteki iki metrikin ortası gibidir hem model doğru tahmin yapsın hem kaçırmasın dersek.
+**ACCURACY SCORE** doğru tahmin sayısı / toplam tahmin sayısı olarak hesaplanan bir değerdir.
+
+**PRECISION** model sınıf tahmin değerlerinde ne kadar başarılı.
+
+**RECALL**  model doğru sınıflardan kaçını bilebildi.
+
+**F1 SCORE**  üstteki iki metrikin ortası gibidir hem model doğru tahmin yapsın hem kaçırmasın dersek.
 
 
 ### MODEL KARŞILAŞTIRMA ÇIKTISI
@@ -160,7 +163,7 @@ Tek farklılık thinkter ile çok basit bir gui ekranı hazırladım ve analiz e
 Bu grafiklerden ilki performans metriklerinin sonucunu ekranda yansıtırken biri veri seti hakkında genel geçer bir bilgi olan target değerimin genel yoğunluğunu veriyor.
 
   #### gui amacı 
-  Kullanıcı tek tek isimlere bakıp yazmak zorunda kalmasın basit bir liste yapısıyla istediği kontenyer türü ve atı ktürünü tek bir tık ile seçebilsin.
+  Kullanıcı tek tek isimlere bakıp yazmak zorunda kalmasın basit bir liste yapısıyla istediği kontenyer türü ve atık türünü tek bir tık ile seçebilsin.
 
   #### gui görseli
   ![Model Çıktısı](images/guitamekran.jpg)
