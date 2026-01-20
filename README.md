@@ -1,3 +1,15 @@
+# SERTİFİKALARIM
+
+ ![Model Çıktısı](images/sertifika1.jpg)
+
+
+ ![Model Çıktısı](images/sertifika22.jpg)
+
+
+
+
+
+
 ## KARAR VEREN MAKİNE ÖĞRENMESİ
 
 ### PROJE AMACI
