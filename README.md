@@ -13,11 +13,15 @@
 ## Akıllı Kontenyer Tahmini
 
 ### PROJE AMACI
+Projemin genel olarak amaçları;
+
   **girilen değerlere göre karar verip kullanıcıların işini kolaylaştırmak**
+
+  **pivot tablosu kullanarak hem kullanıcı hem tasarımcı için de veri setini özetleyecek tablo oluşturmak**
   
   **seçilen 3 sınıflandırma algoritmasını gözle görülür şekilde karşılaştırmak**
   
-  **aynı sitemi thinkter ile kullanıcya sunarak görsel olarak işi güçlendirmek ve  karşılaştırılmalı analiz işini kolaylaştırmak**
+  **aynı sistemi thinkter ile kullanıcya sunarak görsel olarak işi güçlendirmek ve  karşılaştırılmalı analiz işini kolaylaştırmak**
 
 
 
@@ -33,7 +37,7 @@
    
    Pivot tablomu tasarlamadan önce veri setimde bulunan hangi sütun üzerinde tahmin yapmak istediğimi belirledim ve pivot tablomda kullanacağım diğer önemli değerlerin boş olan değerlerini yok ettim ki tutarlı bir tablo oluşturabileyim bu da kullanıcı açısından genel geçer bir değer olmasını istediğim için *class* sütunu oldu devamında ise kullanıcının seçimine bırakıp modelime tahmin ettireceğim değerler olan satır ve sütunlarımı belirledim. 
 
-   Bu aşamada satırlarım kontenyer türlerim oldu , sütunlarım ise atık tipleri oldu , tablomu doldurduğum değerler ise veri setimde bulunan fl_b sütununu diğer bir ifadeyle toplanmadan önceki değer yani bir çöp kutusu hangi yüzdeye eriştiğinde toplanıyor bu değerin ortalması ile doldurdum.
+   Bu aşamada satırlarım kontenyer türlerim oldu , sütunlarım ise atık tipleri oldu , tablomu doldurduğum değerler ise veri setimde bulunan fl_b sütununu diğer bir ifadeyle toplanmadan önceki değer yani bir çöp kutusu hangi yüzdeye eriştiğinde toplanıyor bu değerin ortalaması ile doldurdum.
 
    Böylece pivot tabloma baktığımda veri seti hakkında yüzeysel de olsa bilgiye erişebiliyor oldum.
 
@@ -42,7 +46,7 @@
 
   ![Model Çıktısı](images/pivotkod.jpg)
 
-   Yukarıda görüldüğü üzere pivot tablom satır olarak kontenyer tipini sütunolarak ise atık türünü alıyor ve tablomu dolduracağım değer olarak da boşaltılmadan önceki değeri alıyor aynı zamanda bu depğeri kullanırken genel veri seti hakkında genl bir bilgiye sahip olmak istediğim için ortalamasını aldım.
+   Yukarıda görüldüğü üzere pivot tablom satır olarak kontenyer tipini sütun olarak ise atık türünü alıyor ve tablomu dolduracağım değer olarak da boşaltılmadan önceki değeri alıyor aynı zamanda bu depğeri kullanırken genel veri seti hakkında genl bir bilgiye sahip olmak istediğim için ortalamasını aldım.
 
 
    #### GÖRSEL OLARAK BİZE NE SAĞLADI
@@ -90,27 +94,28 @@ Burada ise yine modellerimi hatalı tahminlerden uzaklaştırmak için yine bir 
 
 #### ekstra adımlar
 
-Ben projemi tasarlarken öellikle farklılık olması adına kullanıcıdan değer alma adımlarını ekledim çünkü bir tahmin yapıalcaksa kullanıcıyı işin içine dahil etmek daha mantıklı olabilir gibi geldi.
-Modelim tahmin yaparken kulalnıcıdan gelen isteklere göre tahmin yapacaktır kulllanıcıdan kontenyer tipi, atık tipi ve çöp kutusunun doluluk oranını istedim ve modelim bu aşamada gelen değerlere göre tahmin yaptı.
-Böylece kullanıcı eğer bu kullanıcı bir kontenyer toplama şirketiyse doluluk oranalrını tiplerini, doluluk oranını girdikten sonra modelimizden çıkan karara göre ekip yönlendirebilir veya henüz toplama aşamasına gelmediyse yönelndirmez.
-Modelimde 3 farklı çıktı aşması bulunmaktadır.Bunlar bekleme modu, takipinin gerekli olduğu yani 24 saat içinde dolabilceği veya acil toplanması gerektiği gibi değerlerdir.
+Ben projemi tasarlarken öellikle farklılık olması adına kullanıcıdan değer alma adımlarını ekledim çünkü bir tahmin yapılacaksa kullanıcıyı işin içine dahil etmek daha mantıklı olabilir gibi geldi.
+Modelim tahmin yaparken kullanıcıdan gelen isteklere göre tahmin yapacaktır kulllanıcıdan kontenyer tipi, atık tipi ve çöp kutusunun doluluk oranını istedim ve modelim bu aşamada gelen değerlere göre tahmin yaptı.
 
-Tüm aşamalarınnın try except bloğu içinde yaptığım kullanıcıdan değer aldıktan sonra da bir takım veri işelme adımları gerçekleştirdim:
+Böylece kullanıcı eğer bir kontenyer toplama şirketiyse doluluk oranlarını, tiplerini girdikten sonra modelimizden çıkan karara göre ekip yönlendirebilir veya henüz toplama aşamasına gelmediyse yönelndirmez.
+Modelimde 2 farklı çıktı aşması bulunmaktadır.Bunlar bekleme modu veya acil toplanması gerektiği gibi değerlerdir ki bunlar veri setimde bulunan empty ve non emptying değerleridir.
+
+Tüm aşamalarınnın try except bloğu içinde yaptığım kullanıcıdan değer aldıktan sonra da bir takım veri işleme adımları gerçekleştirdim:
 
 ![Model Çıktısı](images/preprocessing7.jpg)
 
-Bu adımda basit bir şekilde kulalnıcının absürt değerler (-1,500,-99..) gibi girmesini engelledim bunun için de raise error kullandım ki sistem çökmeden basit bir yazı ile sistem sonlansın.
+Bu adımda basit bir şekilde kulalnıcının absürt değerler (-1,500,-99...) gibi girmesini engelledim bunun için de raise error kullandım ki sistem çökmeden basit bir yazı ile sistem sonlansın.
 
 
 ![Model Çıktısı](images/preprocessing8.jpg)
 
-Bu adımlarda ise yorum satırlarında bahsettiğim gibi kullancııdan girdi aldığım için data frame yapısını korumam gerektiğini düşündüm eğer öncekş yapıyla uyuşmaz model hata verebilirdi bu yüzden de il olarak önceki frame yapımım içini 0larla doldurdum ve devamında da kulanıcıdan girdileri almaya hazır bşr hale geldi
+Bu adımlarda ise yorum satırlarında bahsettiğim gibi kullancııdan girdi aldığım için data frame yapısını korumam gerektiğini düşündüm eğer önceki yapıyla uyuşmaz model hata verebilirdi bu yüzden de il olarak önceki frame yapımım içini 0larla doldurdum ve devamında da kulanıcıdan girdileri almaya hazır bir hale geldi
 
 
 ![Model Çıktısı](images/preprocessing9.jpg)
 
 Bu kod satırlarında ise kullanıcıdan veri almadan önce bahsettiğim gibi onehot encoding uygulamıştım bazı sütunların üzerinde yine aynı duruma ithafen bu sefer de kullanıcıdan aldığım değere onehotencoder uyguladım daha doğrusu seçilen değerimi onehotencoder ile temsil edilebilmesini sağladım.
-Öncelikle dorğu bir seçim yapıldığını kontrol ettikten sonra onehotencoderda ilgili sütuna 1 değerini yolladım böylece model bunun hangi seçim olduğunu bilecek ve tahmin yapabilecek.
+Öncelikle dorğu bir seçim yapıldığını kontrol ettikten sonra onehotencoding ile ilgili sütuna 1 değerini yolladım böylece model bunun hangi seçim olduğunu bilecek ve tahmin yapabilecek.
 
 ![Model Çıktısı](images/preprocessing10.jpg)
 
@@ -124,7 +129,7 @@ Bu adımda ise yine daha önce yaptığım gibi gelen sayısal değeri scale ett
 
 ![Model Çıktısı](images/model1.jpg)
 
-burada da görüldüğü üzere 3 farklı sınıflandırma modelini scale ettiğim x yapıları ile kurdum ki 3üde aynı şekilde eğitilsin  bu adımı böyle kurguladım.
+burada da görüldüğü üzere 3 farklı sınıflandırma modelini scale ettiğim x yapıları ile kurdum ki 3 üde aynı şekilde eğitilsin ve biribirine uyumlar sonuçlar versin.
 
 ![Model Çıktısı](images/model2.jpg)
 
@@ -161,7 +166,7 @@ Kullandığım performans metrikleri ve açıklamaları devamında da çıktı e
 
 
 ## KULLANICI İSTEĞİNE GÖRE MODEL SONUCU
-Bu projemde kullanıcı için iki keran tasarladım.
+Bu projemde kullanıcı için iki ekran tasarladım.
 ### kullanıcı için terminal
 Üstte de bahsettiğim gibi kullanıcı işlemine uygun bir terminal sistemi tasarlamaya çalıştım kullanıcı için ilk olarak kontenyer türlerinin ve atık türlerinin isimleri çıkaca ve devamında da kulalnıcı için bir input alanı oluşacak kullanıcı eğer hatalı girerse hata alacak ve program sonlanacak.
 aşağıda terminalimin görseli bulunmaktadır.
@@ -177,8 +182,10 @@ Tek farklılık thinkter ile çok basit bir gui ekranı hazırladım ve analiz e
 Bu grafiklerden ilki performans metriklerinin sonucunu ekranda yansıtırken biri veri seti hakkında genel geçer bir bilgi olan target değerimin genel yoğunluğunu veriyor.
 
   #### gui amacı 
-  Kullanıcı tek tek isimlere bakıp yazmak zorunda kalmasın basit bir liste yapısıyla istediği kontenyer türü ve atık türünü tek bir tık ile seçebilsin.
+  
+  Kullanıcı tek tek isimlere bakıp yazmak zorunda kalmasın basit bir liste yapısıyla istediği kontenyer türü ve atık türünü tek bir tık ile seçebilsin ve analiz ile girilen modelleri net bir şekilde karşılaştırabilsin
 
   #### gui görseli
+  
   ![Model Çıktısı](images/guitamekran.jpg)
   
