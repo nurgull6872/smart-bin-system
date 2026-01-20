@@ -3,7 +3,7 @@
  ![Model Çıktısı](sertifika1.jpg)
 
 
- ![Model Çıktısı](sertifika22.jpg)
+ ![Model Çıktısı](sertifika2.jpg)
 
 
 
